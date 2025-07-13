@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KATSEYE Gabriela</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="Gabriela Cover.jpg">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; color: white; background-color: black; }
+    a { color: inherit; text-decoration: none; }
+
+    .hero { position: relative; height: 100vh; width: 100%; overflow: hidden; perspective: 1px; transform-style: preserve-3d; }
+    #bgVideo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; transform: translateZ(-1px) scale(2); }
+    .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; background: rgba(0, 0, 0, 0.45); padding: 2rem; border-radius: 16px; backdrop-filter: blur(6px); animation: fadeIn 1.5s ease forwards; }
+    .hero-content img { width: 220px; margin-bottom: 1rem; filter: drop-shadow(0 0 6px #e50914); }
+    .ep-info { font-size: 1.1rem; font-weight: 400; margin-bottom: 0.5rem; }
+    .quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; margin: 1rem 0; }
+    .cta-buttons { margin-bottom: 1.5rem; }
+    .btn { padding: 0.75rem 1.7rem; margin: 0.5rem; border-radius: 30px; font-weight: 600; transition: all 0.3s ease; display: inline-block; font-family: 'Poppins', sans-serif; }
+    .btn.primary { background: linear-gradient(145deg, #e50914, #ff3c6e); color: white; border: none; box-shadow: 0 0 15px rgba(231, 43, 90, 0.5); }
+    .btn.primary:hover { background: #ff416c; }
+    .btn.secondary { background: transparent; border: 2px solid white; color: white; }
+    .btn.secondary:hover { background: rgba(255,255,255,0.15); }
+    .sound-toggle { position: absolute; bottom: 20px; right: 20px; background: #e5091491; color: white; border: none; padding: 0.6rem 1rem; font-size: 1.2rem; border-radius: 8px; cursor: pointer; z-index: 10; }
+
+    .about-katseye { padding: 4rem 2rem; background: black; text-align: center; }
+    .about-katseye h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: #e50914; }
+    .about-katseye p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6; }
+    .about-katseye img { margin-top: 2rem; width: 80%; border-radius: 16px; box-shadow: 0 0 25px rgba(255, 53, 94, 0.25); }
+
+    .teasers { padding: 4rem 2rem; background: #111; text-align: center; }
+    .teasers h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 2rem; color: #ff355e; }
+    .teaser-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding: 0 1rem; }
+    .teaser-card { position: relative; cursor: pointer; border-radius: 12px; overflow: hidden; }
+    .teaser-card img { width: 100%; height: auto; display: block; transition: transform 0.3s ease; }
+    .teaser-card:hover img { transform: scale(1.05); }
+    .play-overlay {  position: absolute;  top: 50%;  left: 50%;  transform: translate(-50%, -50%);  display: flex;  align-items: center;  justify-content: center;  pointer-events: none;  z-index: 1; }
+    .play-overlay img { width: 40px;  height: auto;  opacity: 0.9;  z-index: 2; }
+    .platform-links { padding: 3rem 2rem; background: black; text-align: center; }
+    .platform-links h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; color: #e50914; }
+    .platform-buttons { display: flex;  flex-direction: column;  align-items: center;  gap: 1rem; }
+    .platform-buttons.social-buttons {  flex-direction: row;  justify-content: center;  gap: 1.5rem; }
+    .platform-buttons.social-buttons a {  background: none;  padding: 0;  border-radius: 50%;  transition: transform 0.3s ease, filter 0.3s ease; }
+    .platform-buttons.social-buttons a img {  width: 40px;  height: 40px;  filter: brightness(0) invert(1); }
+    .platform-buttons.social-buttons a:hover {  transform: scale(1.15);  filter: drop-shadow(0 0 6px #df103d); }
+    .platform-buttons a { padding: 0.6rem 1.2rem; border-radius: 30px; background: #e50914; color: white; font-weight: 500; transition: background 0.3s ease; }
+    .platform-buttons a:hover { background: #e50914; }
+
+    footer { background: black; padding: 2rem; text-align: center; font-size: 0.9rem; color: #aaa; }
+    @keyframes fadeIn { 0% { opacity: 0; transform: translate(-50%, -60%); } 100% { opacity: 1; transform: translate(-50%, -50%); } }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <video autoplay loop muted playsinline id="bgVideo" poster="katseye/Gabriela LOGO.png" >
+      <source src="Gabriela OUT NOW.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
+      <img src="katseye/Gabriela LOGO.png" alt="Gabriela Logo"/>
+      <p class="ep-info">from 2nd EP<br><strong>“Beautiful Chaos”</strong><br>Out Now</p>
+      <div class="cta-buttons">
+        <a href="https://katseye.lnk.to/BeautifulChaos" class="btn primary" target="_blank" rel="noopener noreferrer">Buy 'Beautiful Chaos'</a>
+        <a href="https://www.youtube.com/watch?v=CjnB56tSCQI" class="btn secondary" target="_blank" rel="noopener noreferrer">▶ Watch MV </a>
+      </div>
+      <p class="quote">“Entonces ¿quién será la próxima Gabriela?”</p>
+    </div>
+    <button id="soundToggle" class="sound-toggle">
+    <img src="icons/sound-off.svg" alt="Muted" width="24">
+    </button>
+  </section>
+
+  <section class="about-katseye">
+    <h2>Meet KATSEYE</h2>
+    <p>KATSEYE “Feminine, powerful and unique.” The GLOBAL Girl Group Sensation. KATSEYE second EP “BEAUTIFUL CHAOS” is out June 27th!! Welcome to KATSEYE WORLD 🖤</p>
+    <img src="katseye/KATSEYE Gabriela STILL.jpeg" alt="KATSEYE"/>
+  </section>
+
+  <section id="teasers" class="teasers">
+    <h2>Behind the Drama</h2>
+    <div class="teaser-grid">
+      <div class="teaser-card" onclick="window.open('https://www.youtube.com/watch?v=7qg_I0fUOZg','_blank')">
+        <img src="yt/teaser_yt.png" alt="Teaser 1"><div class="play-overlay"><img src="icons/playbutton.svg" alt="Play" width="6"></div>
+      </div>
+      <div class="teaser-card" onclick="window.open('https://www.youtube.com/watch?v=dECMr9qxvdw','_blank')">
+        <img src="yt/teaser_yt2.png" alt="Teaser 2"><div class="play-overlay"><img src="icons/playbutton.svg" alt="Play" width="6"></div>
+      </div>
+      <div class="teaser-card" onclick="window.open('https://www.youtube.com/watch?v=A-v_zibV7fw','_blank')">
+        <img src="yt/behind_yt3.png" alt="Behind the Scenes"><div class="play-overlay"><img src="icons/playbutton.svg" alt="Play" width="6"></div>
+      </div>
+      <div class="teaser-card" onclick="window.open('https://www.youtube.com/watch?v=RQNjCRgCZzU','_blank')">
+        <img src="yt/reaction_yt4.png" alt="MV Reaction"><div class="play-overlay"><img src="icons/playbutton.svg" alt="Play" width="6"></div>
+      </div>
+      <div class="teaser-card" onclick="window.open('https://youtu.be/co-TFLbaZAE?si=iI-NBPAh43f4VOy4','_blank')">
+        <img src="yt/dance_yt5.png" alt="Performance Video"><div class="play-overlay"><img src="icons/playbutton.svg" alt="Play" width="6"></div>
+      </div>
+      <div class="teaser-card" onclick="window.open('https://youtu.be/dZlT1Qk0flA?si=LtRq8UOUnJXgNjuf','_blank')">
+        <img src="yt/gnarly_yt6.png" alt="Gnarly Performance Video"><div class="play-overlay"><img src="icons/playbutton.svg" alt="Play" width="6"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="platform-links">
+  <h2>Listen On</h2>
+  <img src="katseye/Gabriela Cover.jpg" alt="Gabriela Single Cover" style="width: 200px; border-radius: 12px; margin: 1rem auto; display: block;">
+  <div class="platform-buttons">
+    <a href="https://open.spotify.com/artist/3c0gDdb9lhnHGFtP4prQpn?si=M9wJyDeGQR6dz3z4LW-04Q" target="_blank">Spotify</a>
+    <a href="https://music.apple.com/us/artist/katseye/1754284416" target="_blank">Apple Music</a>
+    <a href="https://music.youtube.com/channel/UCX9kfYB9t0tnd6DYUC2iuKg?si=_to0a9wbjeRL33Xw" target="_blank">YouTube Music</a>
+    <a href="https://www.amazon.com/music/KATSEYE" target="_blank">Amazon Music</a>
+    <a href="https://www.youtube.com/watch?v=CjnB56tSCQI" target="_blank">Music Video</a>
+  </div>
+  </section>
+
+  <section class="platform-links">
+  <h2>Follow KATSEYE</h2>
+  <div class="platform-buttons social-buttons">
+    <a href="https://www.katseye.world/" target="_blank"><img src="icons/web.png" alt="Website" width="40"></a>
+    <a href="https://www.youtube.com/@katseyeworld" target="_blank"><img src="icons/youtube.svg" alt="Youtube" width="40"></a>
+    <a href="https://www.instagram.com/katseyeworld/" target="_blank"><img src="icons/instagram.svg" alt="Instagram" width="40"></a>
+    <a href="https://twitter.com/katseyeworld" target="_blank"><img src="icons/x.svg" alt="Twitter" width="40"></a>
+    <a href="https://www.tiktok.com/@katseyeworld" target="_blank"><img src="icons/tiktok.svg" alt="TikTok" width="40"></a>
+    <a href="https://www.facebook.com/katseyeworld" target="_blank"><img src="icons/facebook.svg" alt="Facebook" width="40"></a>
+    <a href="https://m.weverse.io/katseye/feed" target="_blank"><img src="icons/Weverse.svg" alt="Weverse" width="40"></a>
+  </div>
+  </section>
+
+  <footer>© 2025 KATSEYE • Gabriela • Beautiful Chaos EP</footer>
+
+  <script>
+  const toggleBtn = document.getElementById("soundToggle");
+  const video = document.getElementById("bgVideo");
+  toggleBtn.addEventListener("click", () => {
+    video.muted = !video.muted;
+    toggleBtn.innerHTML = video.muted 
+      ? '<img src="icons/sound-off.svg" alt="Muted" width="24">' 
+      : '<img src="icons/sound-on.svg" alt="Sound On" width="24">';
+  });
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY;
+    video.style.transform = `scale(1.15) translateY(${scrolled * 0.2}px)`;
+  });
+  </script>
+</body>
+</html>
